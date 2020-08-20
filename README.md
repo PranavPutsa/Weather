@@ -1,2 +1,2 @@
 # Weather
-Get weather conditions using Python
+Get weather conditions using Python using pyowm library
