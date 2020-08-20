@@ -1,7 +1,7 @@
 import pyowm
 
-owm = pyowm.OWM('f5b6e1329423db53a8adebac5e1d272a')
-obs = owm.weather_at_place("kakinada,IN")
+owm = pyowm.OWM('your owm id which you can get from https://openweathermap.org/')
+obs = owm.weather_at_place(" your current location,country 2 letter code")
 w = obs.get_weather()
 weather = {'cloud_coverage': w.get_clouds(), 'wind': w.get_wind(), 'humidity': w.get_humidity(),
            'temp': w.get_temperature(unit='celsius')}
@@ -19,6 +19,3 @@ elif weather['cloud_coverage'] in range(51, 90):
     cloud_coverage = 'broken clouds'
 elif weather['cloud_coverage'] in range(91, 100):
     cloud_coverage = 'overcast clouds'
-
-print('The weather in Kakinada is ' + str(round(temp_cur)) + ' degrees with ' + cloud_coverage.capitalize() +
-      '. It is ' + str(humidity) + '% humid with a wind speed of ' + str(wind_speed) + ' MpH')
